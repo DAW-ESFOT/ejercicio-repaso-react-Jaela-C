@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import {Layout,Col, Card, Modal, Typography, Button, Pagination} from 'antd';
 import 'antd/dist/antd.css';
 
-
 const { Header } = Layout;
 const TextTitle = Typography.Title;
 
