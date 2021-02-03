@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import {Layout,Col, Card, Modal, Typography, Button} from 'antd';
+import {Layout,Col, Card, Modal, Typography, Button, Pagination} from 'antd';
 import 'antd/dist/antd.css';
 
 
@@ -12,6 +12,8 @@ function App() {
   const [booksDetails, setBooksDetails] = useState([]);
   const [isModalVisible, setIsModalVisible] = useState(false);
   const [id, setId] = useState( null );
+  const [pagination, setPagination] = useState(1);
+
   const handleOk = () => {
     setIsModalVisible(false);
   };
@@ -20,10 +22,14 @@ function App() {
     setIsModalVisible(false);
   };
 
+  const handlePagination = (page) => {
+    setPagination(page);
+  }
+
   useEffect(() => {
     const fetchBooks = async () => {
       const response = await fetch(
-        "https://stark-spire-22280.herokuapp.com/api/books"
+        `https://stark-spire-22280.herokuapp.com/api/books?page=${pagination}`
       );
       const json = await response.json();
       console.log("json", json);
@@ -32,7 +38,7 @@ function App() {
     };
 
     fetchBooks();
-  }, []);
+  }, [pagination]);
 
   useEffect(() => {
     const getBooksDetails = async () => {
@@ -139,6 +145,13 @@ function App() {
           </Col>
     </div>
     </Modal>
+    <Col>
+      <Pagination
+        defaultCurrent={1}
+        total={50}
+        onChange={handlePagination}
+      />
+    </Col> 
     </>
   );
 }
