@@ -1,6 +1,0 @@
-¿Qué es una interfaz?
-En el entorno de interacción persona-ordenador, la interfaz (o interfaz de usuario) es lo que permite que la interacción entre persona y ordenador ocurra. Es decir, la interfaz permite:
-
-Que la persona pueda controlar efectivamente las acciones de la máquina.
-Que la persona reciba respuestas de la máquina que le permitan saber si la interacción es correcta y cómo seguir actuando.
-Por lo tanto, el diseñador de la interfaz se tiene que asegurar de que el proceso de interacción se puede efectuar de manera fácil e intuitiva y que la persona (a la que llamaremos de ahora en adelante usuario) puede acceder a la información o ejecutar las acciones que desea, de la manera más simple posible. Así, el diseño de interfaces implica conocimientos de disciplinas muy variadas, como por ejemplo, la psicología o el diseño visual.
