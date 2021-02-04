@@ -108,11 +108,11 @@ function App() {
               <h4><strong>Autor:</strong> {booksDetails.author}</h4>
               <h4><strong>Edición:</strong> {booksDetails.year_edition}</h4>
               <h4><strong>Precio:</strong> ${booksDetails.price}</h4>
-              <h4><strong>Editorial:</strong> ${booksDetails.editorial}</h4>
+              <h4><strong>Editorial:</strong> {booksDetails.editorial}</h4>
               <h4><strong>Páginas:</strong> {booksDetails.pages}</h4>
               <h4 style={{fontWeight: 'bold'}}>Sinopsis:</h4>
               <p>{booksDetails.synopsis}</p>
-              <h4><strong>Disponible?</strong> {booksDetails.available}</h4>
+              <h4><strong>Disponible:</strong> {booksDetails.available === true ? 'Sí' : 'No'}</h4>
               <h4><strong>Categoría:</strong> {booksDetails.category}</h4>
             </div>
           </Col>
@@ -144,13 +144,15 @@ function App() {
           </Col>
     </div>
     </Modal>
-    <Col>
-      <Pagination
+    <div className = "Container">
+      <Pagination style = {{
+          textAlign: 'center'
+        }}
         defaultCurrent={1}
         total={50}
         onChange={handlePagination}
       />
-    </Col> 
+    </div> 
     </>
   );
 }
